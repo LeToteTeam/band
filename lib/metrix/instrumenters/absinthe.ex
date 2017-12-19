@@ -31,7 +31,7 @@ defmodule Metrix.Instrumenters.Absinthe do
     metric = metric_name(object, result)
     time   = Stats.microseconds(diff)
     tags   = [field(field), object(object)]
-    Stats.histogram(metric, time, tags: tags)
+    Metrix.histogram(metric, time, tags: tags)
   end
 
   defp metric_name(:query, result) do

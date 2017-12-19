@@ -2,7 +2,7 @@ defmodule Metrix.Application do
   use Application
 
   def start(_type, _args) do
-    :ok = Metrix.Stats.connect()
+    :ok = Metrix.connect()
 
     children = [
     ]

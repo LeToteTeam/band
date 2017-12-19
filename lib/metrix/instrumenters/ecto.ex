@@ -12,25 +12,25 @@ defmodule Metrix.Instrumenters.Ecto do
   def log_queue_time(entry) do
     metric = metric_name("queue", entry)
     time = value(entry.queue_time)
-    Stats.histogram(metric, time)
+    Metrix.histogram(metric, time)
   end
 
   def log_query_time(entry) do
     metric = metric_name("query", entry)
     time = value(entry.query_time)
-    Stats.histogram(metric, time)
+    Metrix.histogram(metric, time)
   end
 
   def log_decode_time(entry) do
     metric = metric_name("decode", entry)
     time = value(entry.decode_time)
-    Stats.histogram(metric, time)
+    Metrix.histogram(metric, time)
   end
 
   def log_total_time(entry) do
     metric = metric_name("total", entry)
     time = total_time(entry)
-    Stats.histogram(metric, time)
+    Metrix.histogram(metric, time)
   end
 
   defp total_time(entry) do

@@ -1,4 +1,4 @@
-defmodule Metrix.Instrumenter.Ecto do
+defmodule Metrix.Instrumenters.Ecto do
   alias Metrix.Stats
 
   def log(entry) do

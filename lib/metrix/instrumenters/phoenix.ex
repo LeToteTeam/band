@@ -8,7 +8,7 @@ defmodule Metrix.Instrumenters.Phoenix do
     time = Stats.microseconds(time_diff)
     metric = "phoenix.controller.call_duration"
     tags = [controller(conn), action(conn)]
-    Stats.histogram(metric, time, tags: tags)
+    Metrix.histogram(metric, time, tags: tags)
   end
 
   def phoenix_controller_render(:start, compile, data) do
@@ -18,7 +18,7 @@ defmodule Metrix.Instrumenters.Phoenix do
     time   = Stats.microseconds(time_diff)
     metric = "phoenix.controller.render_duration"
     tags   = [controller(conn), view(view), template(template)]
-    Stats.histogram(metric, time, tags: tags)
+    Metrix.histogram(metric, time, tags: tags)
   end
 
   def phoenix_channel_join(:start, compile, data) do
@@ -29,7 +29,7 @@ defmodule Metrix.Instrumenters.Phoenix do
     metric = "phoenix.channel.join"
     tags   = [channel(socket)]
 
-    Stats.histogram(metric, time, tags: tags)
+    Metrix.histogram(metric, time, tags: tags)
   end
 
   def phoenix_channel_receive(:start, compile, data) do
@@ -39,7 +39,7 @@ defmodule Metrix.Instrumenters.Phoenix do
     time   = Stats.microseconds(time_diff)
     metric = "phoenix.channel.receive"
     tags   = [channel(socket), handler(socket), event(event)]
-    Stats.histogram(metric, time, tags: tags)
+    Metrix.histogram(metric, time, tags: tags)
   end
 
   defp controller(conn) do

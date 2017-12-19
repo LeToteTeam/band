@@ -1,8 +1,6 @@
 defmodule Metrix.Instrumenters.Fuse do
   @behaviour :fuse_stats_plugin
 
-  alias Metrix.Stats
-
   @spec init(name::atom()) :: :ok
   def init(_name), do: :ok
 
@@ -10,11 +8,11 @@ defmodule Metrix.Instrumenters.Fuse do
   def increment(name, counter) do
     case counter do
       :ok ->
-        Stats.increment("fuse.ok", 1, tags: tags(name))
+        Metrix.increment("fuse.ok", 1, tags: tags(name))
       :blown ->
-        Stats.increment("fuse.blown", 1, tags: tags(name))
+        Metrix.increment("fuse.blown", 1, tags: tags(name))
       :melt ->
-        Stats.increment("fuse.melted", 1, tags: tags(name))
+        Metrix.increment("fuse.melted", 1, tags: tags(name))
     end
   end
 

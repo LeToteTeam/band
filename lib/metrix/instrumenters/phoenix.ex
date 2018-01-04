@@ -1,5 +1,6 @@
 defmodule Metrix.Instrumenters.Phoenix do
   alias Metrix.Stats
+  import Phoenix.Controller
 
   def phoenix_controller_call(:start, compile, data) do
     Map.put(data, :compile, compile)
@@ -43,7 +44,7 @@ defmodule Metrix.Instrumenters.Phoenix do
   end
 
   defp controller(conn) do
-    "controller:#{conn.private.phoenix_controller}"
+    "controller:#{controller_module(conn)}"
   end
 
   def view(mod) do
@@ -51,7 +52,7 @@ defmodule Metrix.Instrumenters.Phoenix do
   end
 
   defp action(conn) do
-    "action:#{conn.private.phoenix_action}"
+    "action:#{action_name(conn)}"
   end
 
   defp template(template) do

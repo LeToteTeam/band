@@ -27,8 +27,9 @@ defmodule Metrix.Mixfile do
   defp deps do
     [
       {:statix, "~> 1.1"},
-      {:absinthe, "~> 1.3"},
-      {:fuse, "~> 2.4.0"},
+      {:absinthe, "~> 1.3", optional: true},
+      {:phoenix, "~> 1.3", optional: true},
+      {:fuse, "~> 2.4.0", optional: true},
     ]
   end
 end

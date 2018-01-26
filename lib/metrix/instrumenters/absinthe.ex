@@ -1,3 +1,4 @@
+if Code.ensure_loaded?(Absinthe) do
 defmodule Metrix.Instrumenters.Absinthe do
   alias Absinthe.Resolution
   alias Metrix.Stats
@@ -58,4 +59,5 @@ defmodule Metrix.Instrumenters.Absinthe do
       field: res.definition.schema_node.identifier,
       object: res.parent_type.identifier}
   ]
+end
 end

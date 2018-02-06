@@ -1,4 +1,4 @@
-defmodule MetrixTest do
+defmodule BandTest do
   use ExUnit.Case
-  doctest Metrix
+  doctest Band
 end

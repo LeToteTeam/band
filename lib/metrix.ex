@@ -1,3 +1,3 @@
-defmodule Metrix do
+defmodule Band do
   use Statix
 end

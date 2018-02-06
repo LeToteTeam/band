@@ -1,4 +1,4 @@
-defmodule Metrix.Instrumenters.Fuse do
+defmodule Band.Instrumenters.Fuse do
   @behaviour :fuse_stats_plugin
 
   @spec init(name::atom()) :: :ok
@@ -8,11 +8,11 @@ defmodule Metrix.Instrumenters.Fuse do
   def increment(name, counter) do
     case counter do
       :ok ->
-        Metrix.increment("fuse.ok", 1, tags: tags(name))
+        Band.increment("fuse.ok", 1, tags: tags(name))
       :blown ->
-        Metrix.increment("fuse.blown", 1, tags: tags(name))
+        Band.increment("fuse.blown", 1, tags: tags(name))
       :melt ->
-        Metrix.increment("fuse.melted", 1, tags: tags(name))
+        Band.increment("fuse.melted", 1, tags: tags(name))
     end
   end
 

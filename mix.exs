@@ -63,7 +63,6 @@ defmodule Band.Mixfile do
   defp package_files do
     [
       "lib",
-      "priv",
       "mix.exs",
       "README.md",
       "VERSION",

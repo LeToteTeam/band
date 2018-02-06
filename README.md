@@ -10,7 +10,7 @@ installed by adding `band` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:band, "~> 0.1.0"}
+    {:band, "~> 0.3.0"}
   ]
 end
 ```

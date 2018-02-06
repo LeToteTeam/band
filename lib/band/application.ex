@@ -1,8 +1,8 @@
-defmodule Metrix.Application do
+defmodule Band.Application do
   use Application
 
   def start(_type, _args) do
-    :ok = Metrix.connect()
+    :ok = Band.connect()
 
     children = [
     ]

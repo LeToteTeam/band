@@ -1,7 +1,7 @@
 if Code.ensure_loaded?(Absinthe) do
-  defmodule Metrix.Instrumenters.Absinthe do
+  defmodule Band.Instrumenters.Absinthe do
     alias Absinthe.Resolution
-    alias Metrix.Stats
+    alias Band.Stats
 
     @behaviour Absinthe.Middleware
 
@@ -32,7 +32,7 @@ if Code.ensure_loaded?(Absinthe) do
       metric = metric_name(object, result)
       time   = Stats.microseconds(diff)
       tags   = [field(field), object(object)]
-      Metrix.histogram(metric, time, tags: tags)
+      Band.histogram(metric, time, tags: tags)
     end
 
     defp metric_name(:query, result) do

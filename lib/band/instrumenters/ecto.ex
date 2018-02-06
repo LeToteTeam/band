@@ -1,5 +1,5 @@
-defmodule Metrix.Instrumenters.Ecto do
-  alias Metrix.Stats
+defmodule Band.Instrumenters.Ecto do
+  alias Band.Stats
 
   def log(entry) do
     log_queue_time(entry)
@@ -12,25 +12,25 @@ defmodule Metrix.Instrumenters.Ecto do
   def log_queue_time(entry) do
     metric = metric_name("queue", entry)
     time = value(entry.queue_time)
-    Metrix.histogram(metric, time)
+    Band.histogram(metric, time)
   end
 
   def log_query_time(entry) do
     metric = metric_name("query", entry)
     time = value(entry.query_time)
-    Metrix.histogram(metric, time)
+    Band.histogram(metric, time)
   end
 
   def log_decode_time(entry) do
     metric = metric_name("decode", entry)
     time = value(entry.decode_time)
-    Metrix.histogram(metric, time)
+    Band.histogram(metric, time)
   end
 
   def log_total_time(entry) do
     metric = metric_name("total", entry)
     time = total_time(entry)
-    Metrix.histogram(metric, time)
+    Band.histogram(metric, time)
   end
 
   defp total_time(entry) do

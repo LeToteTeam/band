@@ -36,7 +36,8 @@ defmodule Band.Mixfile do
       {:statix, "~> 1.1"},
       {:absinthe, "~> 1.3", optional: true},
       {:phoenix, "~> 1.3", optional: true},
-      {:fuse, "~> 2.4.0", optional: true},
+      {:fuse, "~> 2.4", optional: true},
+      {:plug, "~> 1.5", optional: true},
       {:ex_doc, "~> 0.18", only: :dev},
     ]
   end

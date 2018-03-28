@@ -1,6 +1,6 @@
 # Band
 
-**TODO: Add description**
+These instrumenters can really play.
 
 ## Installation
 
@@ -10,7 +10,7 @@ installed by adding `band` to your list of dependencies in `mix.exs`:
 ```elixir
 def deps do
   [
-    {:band, "~> 0.3.0"}
+    {:band, "~> 0.4.0"}
   ]
 end
 ```

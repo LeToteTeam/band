@@ -54,7 +54,7 @@ defmodule Band.Mixfile do
 
   defp package do
     [
-      maintainers: ["Chris Keathley", "Greg Mefford", "Jeff Weiss"],
+      maintainers: ["Chris Keathley", "Greg Mefford", "Jeff Weiss", "Jeff Gran"],
       files: package_files(),
       licenses: ["Apache 2.0"],
       links: %{"Github" => "https://github.com/letoteteam/band"}

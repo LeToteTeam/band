@@ -22,15 +22,10 @@ defmodule Band.Mixfile do
     ]
   end
 
-  # Run "mix help compile.app" to learn about applications.
   def application do
-    [
-      mod: {Band.Application, []},
-      extra_applications: [:logger]
-    ]
+    [extra_applications: [:logger]]
   end
 
-  # Run "mix help deps" to learn about dependencies.
   defp deps do
     [
       {:statix, "~> 1.1"},
@@ -54,7 +49,7 @@ defmodule Band.Mixfile do
 
   defp package do
     [
-      maintainers: ["Chris Keathley", "Greg Mefford", "Jeff Weiss", "Jeff Gran"],
+      maintainers: ["Chris Keathley", "Greg Mefford", "Jeff Weiss", "Sonny Scroggin", "Jeff Gran"],
       files: package_files(),
       licenses: ["Apache 2.0"],
       links: %{"Github" => "https://github.com/letoteteam/band"}

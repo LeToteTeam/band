@@ -23,6 +23,6 @@ defmodule Band do
 
     Band.connect()
 
-    :ignore
+    {:ok, nil}
   end
 end

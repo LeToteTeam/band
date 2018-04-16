@@ -25,7 +25,7 @@ if Code.ensure_loaded?(Plug) do
         stop = System.monotonic_time()
         time_diff = Stats.microseconds(stop - start)
 
-        tags = [request_method(conn), request_path(conn), response_status(conn)]
+        tags = [request_method(conn), response_status(conn)]
 
         Band.histogram("plug.response", time_diff, tags: tags)
 
@@ -35,10 +35,6 @@ if Code.ensure_loaded?(Plug) do
 
     defp request_method(conn) do
       "request_method:#{conn.method}"
-    end
-
-    defp request_path(conn) do
-      "request_path:#{conn.request_path}"
     end
 
     defp response_status(conn) do
